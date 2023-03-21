@@ -1,0 +1,24 @@
+{
+  "name": "Comment Gutter",
+  "version": "1",
+  "description": "Shows clickable marks along the scrollbar for link-containing, long, and top level comments on news.ycombinator.com, old.reddit.com and github.com comment pages.",
+
+  "icons": {
+    "128": "icon.png"
+  },
+
+  "content_scripts": [{
+    "js": [ "jquery.min.js", "main.js" ],
+    "matches": [ 
+      "https://news.ycombinator.com/item?id=*",
+      "https://old.reddit.com/r/*/comments/*",
+      "https://github.com/*/issues/*",
+      "https://github.com/*/pull/*"
+    ],
+    "run_at": "document_end"
+  }],
+
+  "permissions": [],
+
+  "manifest_version": 3
+}
